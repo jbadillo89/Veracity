@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "categories": [
+    {"code":"01","category":"COMPENSATION_BENEFITS","label":"compensation and benefits","subcategories":["SALARY","BONUS","BENEFITS","PAY_FAIRNESS","FINANCIAL_RECOGNITION","OTHER_COMPENSATION"]},
+    {"code":"02","category":"MANAGEMENT_LEADERSHIP","label":"management and leadership","subcategories":["DIRECT_SUPERVISION","COMMUNICATION","RECOGNITION","FEEDBACK","DECISION_MAKING","TRUST_AUTONOMY","FAIRNESS","LEADERSHIP_DIRECTION","OTHER_MANAGEMENT"]},
+    {"code":"03","category":"ROLE_WORK_CONTENT","label":"role or work itself","subcategories":["RESPONSIBILITIES","ROLE_CLARITY","JOB_FIT","MEANINGFUL_WORK","PROCESSES","TOOLS_RESOURCES","AUTONOMY","UNCHALLENGING_WORK","OTHER_ROLE"]},
+    {"code":"04","category":"CAREER_DEVELOPMENT","label":"career growth and development","subcategories":["PROMOTION","CAREER_PROGRESSION","TRAINING","SKILL_DEVELOPMENT","INTERNAL_MOBILITY","CAREER_DIRECTION","OTHER_DEVELOPMENT"]},
+    {"code":"05","category":"WORK_ENVIRONMENT_CULTURE","label":"work environment or culture","subcategories":["TEAM_RELATIONSHIPS","COLLABORATION","COMMUNICATION_CLIMATE","RESPECT_INCLUSION","RECOGNITION_CULTURE","ORGANIZATIONAL_VALUES","WORKPLACE_CONFLICT","PHYSICAL_ENVIRONMENT","OTHER_ENVIRONMENT"]},
+    {"code":"06","category":"WORKLOAD_WORK_LIFE","label":"workload and work-life conditions","subcategories":["WORKLOAD","WORKING_HOURS","SCHEDULE","FLEXIBILITY","REMOTE_HYBRID","COMMUTE_LOCATION","STAFFING","WORK_LIFE_BALANCE","OTHER_WORK_CONDITION"]},
+    {"code":"07","category":"ORGANIZATIONAL_CHANGE","label":"organizational change","subcategories":["RESTRUCTURING","INSTABILITY","STRATEGY_DIRECTION","LEADERSHIP_CHANGE","PROCESS_SYSTEM_CHANGE","JOB_SECURITY","OTHER_ORGANIZATIONAL_CHANGE"]},
+    {"code":"08","category":"PERSONAL_CIRCUMSTANCES","label":"personal circumstances","subcategories":["RELOCATION","FAMILY_CAREGIVING","EDUCATION","PERSONAL_OTHER"]},
+    {"code":"09","category":"EXTERNAL_OPPORTUNITY","label":"external opportunity","subcategories":["BETTER_COMPENSATION","BETTER_ROLE","CAREER_ADVANCEMENT","PREFERRED_FIELD","PREFERRED_EMPLOYER","SELF_EMPLOYMENT","OTHER_EXTERNAL_OPPORTUNITY"]},
+    {"code":"10","category":"EMPLOYMENT_EVENT","label":"employment event","subcategories":["CONTRACT_COMPLETION","RETIREMENT","INTERNAL_TRANSFER","EMPLOYER_INITIATED","MUTUAL_SEPARATION","OTHER_EMPLOYMENT_EVENT"]},
+    {"code":"11","category":"OTHER","label":"something else","subcategories":[]},
+    {"code":"99","category":"UNCLASSIFIED","label":"not yet classified","subcategories":[]}
+  ],
+  "separation_contexts": ["VOLUNTARY","INVOLUNTARY","RETIREMENT","CONTRACT_END","INTERNAL_TRANSFER","OTHER","PREFER_NOT_TO_ANSWER"]
+}

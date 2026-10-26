@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "clause_boundaries": "[.!?;\\n]+|\\s+(?:and|but|however|although)\\s+",
+  "exclusion_patterns": [
+    "\\b(?:not|never)\\s+(?:really\\s+)?(?:an?\\s+|one of (?:my|the)\\s+)?(?:reason|factor)\\b",
+    "\\b(?:wasn't|weren't|isn't|aren't|was not|were not|is not|are not)\\s+(?:really\\s+)?(?:why|the reason|a reason|one of (?:my|the) reasons|a factor)\\b",
+    "\\b(?:didn't|did not|doesn't|does not)\\s+(?:contribute|matter|influence)\\b",
+    "\\bnot because\\b|\\bnothing to do with\\b",
+    "\\b(?:not leaving|didn't leave|did not leave) because\\b"
+  ],
+  "uncertainty_patterns": ["\\bmaybe\\b", "\\bperhaps\\b", "\\bnot sure\\b", "\\bmight\\b", "\\bcould have\\b", "\\bif\\b"],
+  "negation_patterns": ["\\b(?:not|never|no)\\b", "\\b\\w+n't\\b"],
+  "push_patterns": ["\\b(?:i left|i am leaving|i'm leaving|i resigned|i wanted to leave|i decided to leave) because\\b", "\\b(?:at|in) (?:my|the) (?:current|existing|old) (?:job|employment|company)\\b"],
+  "pull_patterns": ["\\b(?:another|new|external) (?:job|role|opportunity|offer)\\b"],
+  "rules": [
+    {
+      "category":"COMPENSATION_BENEFITS", "subcategory":"SALARY", "label":"salary or pay",
+      "topics":["\\b(?:salary|pay|money|wages)\\b"],
+      "patterns":["\\b(?:salary|pay|wages) (?:was|is|were|are) (?:too low|low|uncompetitive)\\b", "\\b(?:salary|pay) (?:wasn't|isn't|was not|is not) competitive\\b", "\\b(?:salary|pay|money) was one of (?:my|the) reasons\\b"],
+      "explicit_labels":["salary", "pay", "low salary", "low pay"],
+      "negative_is_evidence":true, "default_influence":"PUSH"
+    },
+    {
+      "category":"CAREER_DEVELOPMENT", "subcategory":"CAREER_PROGRESSION", "label":"career progression",
+      "topics":["\\b(?:advance|advancement|career growth|career progression)\\b"],
+      "patterns":["\\b(?:there was|there is) nowhere (?:for me )?to advance\\b", "\\bi (?:couldn't|cannot|can't|could not) see any career growth\\b", "\\bno (?:career growth|career progression|room to advance)\\b"],
+      "explicit_labels":["career progression", "career growth", "nowhere to advance"],
+      "negative_is_evidence":true, "default_influence":"PUSH"
+    },
+    {
+      "category":"WORKLOAD_WORK_LIFE", "subcategory":"WORKING_HOURS", "label":"working hours",
+      "topics":["\\b(?:hours|working hours)\\b"],
+      "patterns":["\\b(?:working )?hours (?:were|are|was) terrible\\b", "\\bi (?:was|am) working too many hours\\b"],
+      "explicit_labels":["working hours", "hours", "too many hours"],
+      "negative_is_evidence":false, "default_influence":"PUSH"
+    },
+    {
+      "category":"MANAGEMENT_LEADERSHIP", "subcategory":"DIRECT_SUPERVISION", "label":"direct supervision",
+      "topics":["\\b(?:supervision|supervisor|manager)\\b"],
+      "patterns":["\\bmy manager's supervision was one of (?:my|the) reasons\\b", "\\bi (?:had|have) problems with my direct supervisor\\b"],
+      "explicit_labels":["direct supervision", "supervision", "direct supervisor"],
+      "negative_is_evidence":false, "default_influence":"PUSH"
+    },
+    {
+      "category":"PERSONAL_CIRCUMSTANCES", "subcategory":"RELOCATION", "label":"relocation",
+      "topics":["\\b(?:relocat(?:ing|ion)|moving away)\\b"],
+      "patterns":["\\bi(?:'m| am) relocating\\b", "\\bi(?:'m| am) moving away\\b"],
+      "explicit_labels":["relocation", "relocating", "moving away"],
+      "negative_is_evidence":false, "default_influence":"UNKNOWN"
+    },
+    {
+      "category":"EXTERNAL_OPPORTUNITY", "subcategory":"BETTER_COMPENSATION", "label":"better compensation at another job",
+      "topics":["\\b(?:another job|new job|pays more|better compensation)\\b"],
+      "patterns":["\\bi (?:accepted|took) another job because it pays more\\b"],
+      "explicit_labels":["better compensation at another job", "another job that pays more"],
+      "negative_is_evidence":false, "default_influence":"PULL"
+    },
+    {
+      "category":"PERSONAL_CIRCUMSTANCES", "subcategory":"PERSONAL_OTHER", "label":"personal reasons",
+      "topics":["\\bpersonal (?:reasons?|circumstances?|matters?)\\b", "\\bmy reasons? (?:are|were|is|was) personal\\b"],
+      "patterns":["\\bi (?:left|am leaving|resigned) (?:for|because of) personal (?:reasons?|circumstances?|matters?)\\b", "\\bmy reasons? (?:are|were|is|was) personal\\b"],
+      "explicit_labels":["personal", "personal reason", "personal reasons", "personal circumstances", "personal matters", "for personal reasons"],
+      "default_influence":"UNKNOWN"
+    },
+    {
+      "category":"EMPLOYMENT_EVENT", "subcategory":"EMPLOYER_INITIATED", "label":"employer-initiated separation",
+      "topics":["\\b(?:fired|terminated)\\b"],
+      "patterns":["^i was (?:fired(?! up\\b)|terminated)\\b", "^the company terminated my employment\\b"],
+      "explicit_labels":[],
+      "negative_is_evidence":false, "default_influence":"UNKNOWN"
+    }
+  ],
+  "broad_factors": [
+    {"category":"COMPENSATION_BENEFITS","subcategory":"OTHER_COMPENSATION","labels":["compensation and benefits"]},
+    {"category":"MANAGEMENT_LEADERSHIP","subcategory":"OTHER_MANAGEMENT","labels":["management and leadership"]},
+    {"category":"ROLE_WORK_CONTENT","subcategory":"OTHER_ROLE","labels":["role or work itself","role","work itself"]},
+    {"category":"CAREER_DEVELOPMENT","subcategory":"OTHER_DEVELOPMENT","labels":["career growth and development"]},
+    {"category":"WORK_ENVIRONMENT_CULTURE","subcategory":"OTHER_ENVIRONMENT","labels":["work environment or culture","work environment","culture"]},
+    {"category":"WORKLOAD_WORK_LIFE","subcategory":"OTHER_WORK_CONDITION","labels":["workload and work-life conditions","workload"]},
+    {"category":"ORGANIZATIONAL_CHANGE","subcategory":"OTHER_ORGANIZATIONAL_CHANGE","labels":["organizational change"]},
+    {"category":"PERSONAL_CIRCUMSTANCES","subcategory":"PERSONAL_OTHER","labels":["personal circumstances"]},
+    {"category":"EXTERNAL_OPPORTUNITY","subcategory":"OTHER_EXTERNAL_OPPORTUNITY","labels":["external opportunity"]},
+    {"category":"EMPLOYMENT_EVENT","subcategory":"OTHER_EMPLOYMENT_EVENT","labels":["employment event"]},
+    {"category":"OTHER","subcategory":null,"labels":["something else","other"]}
+  ],
+  "clarifications": [
+    {
+      "patterns":["^(?:new )?career opportunities$"],
+      "question_ids":["clarify_career_first","clarify_career_second"],
+      "different_answers":["something different","something else","neither"],
+      "different_question_id":"clarify_career_different",
+      "interpretations":[
+        {"category":"CAREER_DEVELOPMENT","subcategory":"CAREER_PROGRESSION","label":"career opportunities missing here","answers":["missing here","opportunities missing here","opportunities were missing here","internal","here"]},
+        {"category":"EXTERNAL_OPPORTUNITY","subcategory":"CAREER_ADVANCEMENT","label":"career opportunity elsewhere","answers":["somewhere else","available somewhere else","an opportunity available somewhere else","elsewhere","external","external opportunity"]}
+      ]
+    }
+  ],
+  "influence_answers": {
+    "PUSH":["push","existing employment","current job"],
+    "PULL":["pull","external attraction","external opportunity"],
+    "MIXED":["mixed","both","push and pull"],
+    "UNKNOWN":["unknown","unclear","not sure"]
+  }
+}

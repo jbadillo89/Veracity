@@ -1,0 +1,21 @@
+{
+  "commands": {
+    "START": ["start"],
+    "SKIP": ["skip"],
+    "PREFER_NOT_TO_ANSWER": ["prefer not to answer", "i prefer not to answer", "prefer not", "rather not answer"],
+    "HELP": ["help"],
+    "STOP": ["stop"],
+    "EXIT": ["exit"]
+  },
+  "no_more_factors": ["no", "nope", "no more", "no other reason", "no other reasons", "not really", "none", "nothing", "nothing else", "no other factors", "that's all", "that is all"],
+  "separation_contexts": {
+    "VOLUNTARY": ["1", "voluntary", "i resigned"],
+    "INVOLUNTARY": ["2", "involuntary", "employer initiated"],
+    "RETIREMENT": ["3", "retirement", "retired"],
+    "CONTRACT_END": ["4", "contract end", "contract ended", "contract completion"],
+    "INTERNAL_TRANSFER": ["5", "internal transfer"],
+    "OTHER": ["6", "other"],
+    "PREFER_NOT_TO_ANSWER": ["7", "prefer not to answer"]
+  },
+  "sensitive_topics": ["\\bharass(?:ment|ed)?\\b", "\\bdiscriminat(?:ion|ed)\\b", "\\bbull(?:ying|ied)\\b", "\\bthreat(?:s|ened)?\\b", "\\bunsafe\\b", "\\bassault(?:ed)?\\b"]
+}
